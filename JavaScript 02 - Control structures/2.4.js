@@ -2,9 +2,12 @@
 const readlineSync = require("readline-sync");
 
 for (let x = 1; x <= 100; x++) {
+    /*even numbers*/
     if (x % 2 == 0) {
         console.log(x / 2);
-    } else {
+    }
+    /*Odd numbers*/
+    else {
         console.log(x * 3);
     }
 }
