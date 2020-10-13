@@ -22,6 +22,6 @@ console.log(arrCopy);*/
 
 /*Third method
 let arr = [1, 2, 3, 4, 5];
-//slice method - Adds and/or removes elements from an array.
+//slice method - Extracts a section of an array and returns a new array.
 let arrCopy = arr.slice();
 console.log(arrCopy);*/
