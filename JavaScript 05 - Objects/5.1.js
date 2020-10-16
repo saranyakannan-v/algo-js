@@ -35,5 +35,5 @@ function askCastMembers() {
     return cast_members_array;
 }
 
-
+// syntax of JSON => JSON.stringify(value[, replacer[, space]])
 console.log(JSON.stringify(askTvSerie(), null, 3));
