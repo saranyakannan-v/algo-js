@@ -1,12 +1,6 @@
-// Create a function named askTvSerie() that will ask the user for the following data about its favorite TV serie:
+// Create a function named randomizeCast(tvSerie) that will take as argument the data structure you defined in the previous exercise and return a list of the same cast but in a random order.
 
-//     Name
-//     Production year
-//     Names of the cast members (there can be as much as the user want)
-
-// That function must gather all the data in a single object and return it. The data structure must be elegant.
-
-// Create a program that use that function to generate a TV serie object and display it to the user in JSON format.
+// Create a program that will use randomizeCast(tvSerie) and askTvSerie() to ask the user about a TV serie then display a randomized list of the previous cast that will form the new cast of your next serie.
 
 const readlineSync = require("readline-sync");
 
@@ -37,3 +31,20 @@ function askCastMembers() {
 // JSON.stringify() method converts a JavaScript object or value to a JSON string
 // syntax of JSON => JSON.stringify(value[, replacer[, space]])
 console.log(JSON.stringify(askTvSerie(), null, 3));
+
+let tvSerie = askTvSerie();
+
+function randomizeCast(tvSerie) {
+    let i = 0;
+    let temp;
+    let random;
+    for (let i = 0; i < tvSerie.castMembers.length; i++) {
+        random = Math.floor(Math.random() * tvSerie.castMembers.length - 1);
+        temp = tvSerie.castMembers[i];
+        tvSerie.castMembers[i] = tvSerie.castMembers[random];
+        tvSerie.castMembers[random] = temp;
+    }
+    return tvSerie;
+}
+
+console.log(randomizeCast(tvSerie));
